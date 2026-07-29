@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bookroid プライバシーポリシー / Privacy Policy</title>
+<style>
+  :root { --paper:#F4F1EA; --ink:#1B1A17; --ink2:#4A463E; --rule:#C9C3B6; }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; padding:48px 20px 96px;
+    background:var(--paper); color:var(--ink);
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", Georgia, "Times New Roman", serif;
+    line-height:1.9; font-size:17px;
+  }
+  main { max-width:720px; margin:0 auto; }
+  h1 { font-size:30px; margin:0 0 4px; letter-spacing:.02em; }
+  h2 { font-size:22px; margin:56px 0 12px; padding-bottom:8px; border-bottom:1px solid var(--rule); }
+  h3 { font-size:18px; margin:32px 0 8px; }
+  p, li { color:var(--ink2); }
+  .meta { color:var(--ink2); font-size:14px; margin:0 0 40px; }
+  hr { border:0; border-top:1px solid var(--rule); margin:64px 0; }
+  table { width:100%; border-collapse:collapse; margin:16px 0 8px; font-size:15px; }
+  th, td { text-align:left; vertical-align:top; padding:10px 12px 10px 0; border-bottom:1px solid var(--rule); color:var(--ink2); }
+  th { color:var(--ink); font-weight:600; white-space:nowrap; }
+  .wrap { overflow-x:auto; }
+  a { color:var(--ink); }
+  strong { color:var(--ink); }
+  footer { margin-top:64px; font-size:14px; color:var(--ink2); }
+  @media (max-width:600px){ body{font-size:16px;padding:32px 16px 72px;} h1{font-size:25px;} }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Bookroid プライバシーポリシー</h1>
+<p class="meta">最終更新: 2026年7月29日</p>
+
+<p><strong>Bookroid</strong>（以下「本アプリ」）は、スマートフォンを一冊の本として読み直すための Android ランチャーです。本アプリは、収集を最小限にとどめ、集めたものは原則として端末の外に出さない方針で設計されています。本ポリシーは、本アプリが何をどう扱うかを正確に説明するものです。</p>
+
+<h2>1. 本アプリが端末内で扱う情報</h2>
+
+<p>以下はすべて<strong>端末内でのみ</strong>扱われ、当社のサーバーには送信されません。当社は以下の情報を受け取りません。</p>
+
+<div class="wrap">
+<table>
+<tr><th>情報</th><th>用途</th><th>保存</th></tr>
+<tr>
+  <td>インストール済みアプリの一覧<br>（QUERY_ALL_PACKAGES）</td>
+  <td>ホーム画面である「目次」に、アプリを「章」として並べ、分類するため。ランチャーとしての中核機能です。</td>
+  <td>端末内のみ</td>
+</tr>
+<tr>
+  <td>アプリの利用時間<br>（使用状況へのアクセス）</td>
+  <td>1日の「頁予算」の消費量を計算し、読書統計として表示するため。本アプリの中心的な仕組みです。</td>
+  <td>端末内のみ</td>
+</tr>
+<tr>
+  <td>通知<br>（通知へのアクセス）</td>
+  <td>「便り」画面で通知をまとめて読み、対応する通知に返信するため。および奥付の通知件数統計のため。通知の本文は画面表示と返信のためにメモリ上でのみ扱われます。</td>
+  <td>端末内のみ<br>（永続保存は件数のみ）</td>
+</tr>
+<tr>
+  <td>カレンダーの予定<br>（READ_CALENDAR）</td>
+  <td>目次に「今日の予定」を表示するため。読み取りのみで、変更や追加は端末標準のカレンダーアプリが行います。</td>
+  <td>保存しません<br>（表示時に都度読み取り）</td>
+</tr>
+<tr>
+  <td>写真<br>（READ_MEDIA_IMAGES）</td>
+  <td>「写生帖」で写真を本の中の頁として表示するため。および表紙に写真を選んだ場合の表示のため。</td>
+  <td>表紙に選んだ写真のみアプリ専用領域に複製</td>
+</tr>
+<tr>
+  <td>しおり（ユーザー補助サービス）</td>
+  <td>浮遊する「しおり」を押した瞬間の、表示中のURLまたは画面上のテキストを取得し、あとで読み返せる記録として残すため。詳細は第2節。</td>
+  <td>端末内のみ</td>
+</tr>
+<tr>
+  <td>読書設定</td>
+  <td>頁予算・起床時刻・章立て・表紙・書体などの設定を保持するため。</td>
+  <td>端末内のみ</td>
+</tr>
+</table>
+</div>
+
+<h2>2. ユーザー補助サービス（しおり機能）について</h2>
+
+<p>本アプリは、任意で有効にできる「しおり」機能のために Android のユーザー補助サービス（Accessibility Service）を使用します。この機能について、以下を明示します。</p>
+
+<ul>
+  <li><strong>既定では無効です。</strong> あなたが設定画面で明示的に有効にしない限り、一切動作しません。</li>
+  <li><strong>読み取り専用です。</strong> 画面の操作を代行したり、タップを送ったりすることはありません。</li>
+  <li>取得するのは、<strong>表示中のブラウザのURL</strong>と<strong>画面に見えているテキスト</strong>です。しおりを挟んだ瞬間の内容を、あとで読み返すための記録として残します。</li>
+  <li>取得した内容は<strong>端末内にのみ保存され、外部に送信されることはありません</strong>。</li>
+  <li>銀行アプリなど、内容の読み取りを禁じているアプリからは何も取得できません。</li>
+  <li>いつでも Android の設定から無効にでき、無効にすると以後一切取得しません。</li>
+</ul>
+
+<h2>3. 端末の外に出る通信について</h2>
+
+<p>本アプリは解析SDK・広告SDKを一切含みませんが、以下の場合にはあなたの操作にもとづき通信が発生します。この通信の内容は当社を経由せず、当社は内容を受け取りません。</p>
+
+<h3>web検索・本文リーダー</h3>
+<p>目次の「ブラウザ検索」章で言葉を入力すると、その検索語は <strong>Google 検索</strong>に送信されます。検索結果から開いたページの閲覧は、そのウェブサイトへの通常の通信です。これらには Google および各ウェブサイトのプライバシーポリシーが適用されます。</p>
+
+<h3>アプリ内購入</h3>
+<p>本アプリの購入手続きは <strong>Google Play 課金システム</strong>が行います。決済情報は Google が扱い、本アプリはクレジットカード番号等の決済情報を受け取りません。本アプリが受け取るのは購入が成立したかどうかの状態のみです。</p>
+
+<h2>4. 第三者への提供</h2>
+<p>本アプリは、あなたの情報を第三者に販売・提供しません。当社のサーバーは存在せず、上記以外の外部送信は行いません。</p>
+
+<h2>5. 子どもの利用</h2>
+<p>本アプリは特に子どもを対象とした設計ではなく、子どもから意図的に個人情報を収集することはありません。</p>
+
+<h2>6. データの削除</h2>
+<p>本アプリをアンインストールすると、本アプリが端末内に保存したデータはすべて削除されます。個別の削除は、Android の設定からアプリのデータを消去することでも行えます。</p>
+
+<h2>7. ポリシーの変更</h2>
+<p>本ポリシーを変更した場合、本ページの最終更新日を改めます。重要な変更はアプリ内でもお知らせします。</p>
+
+<h2>8. お問い合わせ</h2>
+<p>Caravan Village Incorporated<br>
+<a href="mailto:info@cavi.world">info@cavi.world</a></p>
+
+<hr>
+
+<h1>Bookroid Privacy Policy</h1>
+<p class="meta">Last updated: 29 July 2026</p>
+
+<p><strong>Bookroid</strong> is an Android launcher that reopens your phone as a single book. It is designed to collect as little as possible, and to keep what it does collect on your device. This policy describes exactly what the app handles and how.</p>
+
+<h2>1. Information handled on your device</h2>
+<p>All of the following stays <strong>on your device</strong>. None of it is sent to our servers — we do not receive it.</p>
+
+<div class="wrap">
+<table>
+<tr><th>Data</th><th>Purpose</th><th>Storage</th></tr>
+<tr><td>List of installed apps (QUERY_ALL_PACKAGES)</td><td>To list every app as a "chapter" in the table of contents that serves as your home screen, and to sort them into parts. This is the app's core launcher function.</td><td>On device only</td></tr>
+<tr><td>App usage time (Usage Access)</td><td>To compute how much of your daily "page budget" you have spent, and to show reading statistics. This is the app's central mechanic.</td><td>On device only</td></tr>
+<tr><td>Notifications (Notification Access)</td><td>To show your notifications together as "Letters" and let you reply inline, and to show daily notification counts in the colophon. Notification text is held in memory only, for display and reply.</td><td>On device only (only counts are persisted)</td></tr>
+<tr><td>Calendar events (READ_CALENDAR)</td><td>To show today's agenda on the table of contents. Read-only; creating and editing events is handed to your own calendar app.</td><td>Not stored (read on display)</td></tr>
+<tr><td>Photos (READ_MEDIA_IMAGES)</td><td>To show your photos as pages in the book, and to display a photo you choose as the book's cover.</td><td>Only a chosen cover photo is copied into the app's private storage</td></tr>
+<tr><td>Bookmarks (Accessibility Service)</td><td>To capture the URL or on-screen text at the moment you tap the floating bookmark, so you can read it again later. See section 2.</td><td>On device only</td></tr>
+<tr><td>Reading settings</td><td>To keep your page budget, waking hour, chapter arrangement, cover and typeface.</td><td>On device only</td></tr>
+</table>
+</div>
+
+<h2>2. About the Accessibility Service (bookmark feature)</h2>
+<ul>
+  <li><strong>Off by default.</strong> It does nothing unless you explicitly enable it.</li>
+  <li><strong>Read-only.</strong> It never performs gestures or taps on your behalf.</li>
+  <li>It reads the <strong>URL shown in a browser</strong> and <strong>text visible on screen</strong>, to record what you were reading when you placed a bookmark.</li>
+  <li>What it reads is <strong>stored only on your device and never transmitted</strong>.</li>
+  <li>Apps that mark their content as secure (banking apps, for example) yield nothing.</li>
+  <li>You can disable it at any time from Android settings; nothing is read afterwards.</li>
+</ul>
+
+<h2>3. Traffic that leaves your device</h2>
+<p>Bookroid contains no analytics or advertising SDKs. Network traffic occurs only as a direct result of your actions, does not pass through us, and its contents are not received by us.</p>
+<h3>Web search and in-book reader</h3>
+<p>Words you type into the "Browser search" chapter are sent to <strong>Google Search</strong>. Opening a result is ordinary traffic to that website. Google's and each site's own privacy policies apply.</p>
+<h3>In-app purchases</h3>
+<p>Purchases are handled by <strong>Google Play Billing</strong>. Google handles payment details; the app never receives your card or payment information — only whether a purchase succeeded.</p>
+
+<h2>4. Sharing</h2>
+<p>We do not sell or share your information with third parties. We operate no server for this app, and no transmission occurs beyond what is described above.</p>
+
+<h2>5. Children</h2>
+<p>Bookroid is not directed at children, and does not knowingly collect personal information from them.</p>
+
+<h2>6. Deleting your data</h2>
+<p>Uninstalling the app deletes everything it stored on your device. You can also clear the app's data from Android settings.</p>
+
+<h2>7. Changes</h2>
+<p>If this policy changes, the date at the top of this page is updated. Significant changes are also announced in the app.</p>
+
+<h2>8. Contact</h2>
+<p>Caravan Village Incorporated<br>
+<a href="mailto:info@cavi.world">info@cavi.world</a></p>
+
+<footer>© 2026 Caravan Village Incorporated</footer>
+
+</main>
+</body>
+</html>
