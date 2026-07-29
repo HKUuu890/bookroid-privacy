@@ -71,8 +71,8 @@
   <td>表紙に選んだ写真のみアプリ専用領域に複製</td>
 </tr>
 <tr>
-  <td>しおり（ユーザー補助サービス）</td>
-  <td>浮遊する「しおり」を押した瞬間の、表示中のURLまたは画面上のテキストを取得し、あとで読み返せる記録として残すため。詳細は第2節。</td>
+  <td>しおりに残した文章</td>
+  <td>あなたが文章を選んで選択メニューの「しおり」を押したとき、または共有メニューから送ったときに、その本文を記録として残すため。<strong>あなたが自分で渡したものだけ</strong>を受け取ります。本アプリが他のアプリの画面を読むことはありません。</td>
   <td>端末内のみ</td>
 </tr>
 <tr>
@@ -83,18 +83,19 @@
 </table>
 </div>
 
-<h2>2. ユーザー補助サービス（しおり機能）について</h2>
+<h2>2. しおりに何が残るか</h2>
 
-<p>本アプリは、任意で有効にできる「しおり」機能のために Android のユーザー補助サービス（Accessibility Service）を使用します。この機能について、以下を明示します。</p>
+<p>しおりは、<strong>あなたが明示的に渡した文章だけ</strong>を受け取ります。</p>
 
 <ul>
-  <li><strong>既定では無効です。</strong> あなたが設定画面で明示的に有効にしない限り、一切動作しません。</li>
-  <li><strong>読み取り専用です。</strong> 画面の操作を代行したり、タップを送ったりすることはありません。</li>
-  <li>取得するのは、<strong>表示中のブラウザのURL</strong>と<strong>画面に見えているテキスト</strong>です。しおりを挟んだ瞬間の内容を、あとで読み返すための記録として残します。</li>
-  <li>取得した内容は<strong>端末内にのみ保存され、外部に送信されることはありません</strong>。</li>
-  <li>銀行アプリなど、内容の読み取りを禁じているアプリからは何も取得できません。</li>
-  <li>いつでも Android の設定から無効にでき、無効にすると以後一切取得しません。</li>
+  <li>読んでいる文章を選択し、選択メニューの「しおり」を押す（全選択も可）</li>
+  <li>または共有メニューから「しおり」へ送る</li>
 </ul>
+
+<p>いずれの場合も、渡された本文は端末内にのみ保存され、外部に送信されることはありません。浮遊する「しおり」を長押しした場合は、時刻とその時のアプリ名だけが残ります（本文は残りません）。</p>
+
+<p>本アプリは <strong>Android のユーザー補助サービス（Accessibility Service）を使用しません</strong>。他のアプリの画面内容を読み取る機能はありません。</p>
+
 
 <h2>3. 端末の外に出る通信について</h2>
 
@@ -140,20 +141,24 @@
 <tr><td>Notifications (Notification Access)</td><td>To show your notifications together as "Letters" and let you reply inline, and to show daily notification counts in the colophon. Notification text is held in memory only, for display and reply.</td><td>On device only (only counts are persisted)</td></tr>
 <tr><td>Calendar events (READ_CALENDAR)</td><td>To show today's agenda on the table of contents. Read-only; creating and editing events is handed to your own calendar app.</td><td>Not stored (read on display)</td></tr>
 <tr><td>Photos (READ_MEDIA_IMAGES)</td><td>To show your photos as pages in the book, and to display a photo you choose as the book's cover.</td><td>Only a chosen cover photo is copied into the app's private storage</td></tr>
-<tr><td>Bookmarks (Accessibility Service)</td><td>To capture the URL or on-screen text at the moment you tap the floating bookmark, so you can read it again later. See section 2.</td><td>On device only</td></tr>
+<tr><td>Text you bookmark</td><td>To keep a passage you selected and sent to Bookroid — via the text-selection menu or the share sheet — so you can read it again later. <strong>Only what you hand over yourself</strong> is received; the app never reads other apps' screens.</td><td>On device only</td></tr>
 <tr><td>Reading settings</td><td>To keep your page budget, waking hour, chapter arrangement, cover and typeface.</td><td>On device only</td></tr>
 </table>
 </div>
 
-<h2>2. About the Accessibility Service (bookmark feature)</h2>
+<h2>2. What a bookmark keeps</h2>
+
+<p>A bookmark only ever receives text <strong>you hand over explicitly</strong>:</p>
+
 <ul>
-  <li><strong>Off by default.</strong> It does nothing unless you explicitly enable it.</li>
-  <li><strong>Read-only.</strong> It never performs gestures or taps on your behalf.</li>
-  <li>It reads the <strong>URL shown in a browser</strong> and <strong>text visible on screen</strong>, to record what you were reading when you placed a bookmark.</li>
-  <li>What it reads is <strong>stored only on your device and never transmitted</strong>.</li>
-  <li>Apps that mark their content as secure (banking apps, for example) yield nothing.</li>
-  <li>You can disable it at any time from Android settings; nothing is read afterwards.</li>
+  <li>select the passage you are reading (select-all is fine) and choose "Bookmarks" from the selection menu, or</li>
+  <li>share it to Bookroid from the share sheet.</li>
 </ul>
+
+<p>Either way the passage is stored only on your device and is never transmitted. Long-pressing the floating ribbon keeps only the time and the app's name — no text.</p>
+
+<p>Bookroid <strong>does not use Android's Accessibility Service</strong>. It has no ability to read the contents of other apps' screens.</p>
+
 
 <h2>3. Traffic that leaves your device</h2>
 <p>Bookroid contains no analytics or advertising SDKs. Network traffic occurs only as a direct result of your actions, does not pass through us, and its contents are not received by us.</p>
